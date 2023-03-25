@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl px-5 pb-10">
         <NextImage
           src={"/images/chris-profile.png"}
           alt={"chris-profile"}
@@ -38,52 +38,38 @@ export default function Home() {
             Resume
           </button>
         </div>
-        {/* <div className="mt-6 border-black border-2 px-16 py-4 flex justify-between items-center">
-          <h1 className="text-base font-robotomono-semibold">
-            Chris K. Seidel
-          </h1>
-          <button className="bg-black hover:bg-neutral-800 text-white font-robotomono-semibold py-4 px-12 flex items-center">
-            Contact Me
-            <HiArrowRight className="ml-2" color="#ffffff" />
-          </button>
-        </div> */}
-
-        {/* <div className="grid lg:grid-cols-2 mt-6 border-black border-2 p-16">
-        <div className="flex flex-col justify-center">
-          <h1 className="mt-2 text-4xl font-robotomono-semibold tracking-tight text-gray-900">
-            Chris K. Seidel
-          </h1>
-          <h2 className="mt-6 text-xl font-robotomono-regular tracking-tight text-gray-900 sm:text-xl">
-            UI / UX Designer for Apps with purpose ♥️
-          </h2>
-          <p className="text-base font-robotomono-regular mt-4">
-            I&apos;m working as a UI / UX Designer, Concepter, as well as Head
-            of Product top Apps on the german Mental Health & physical Health
-            market with 500k+ users and over 4.8 appstore rating. I&apos;m
-            always open for interesting freelance projects and open to give
-            advice.
-          </p>
-          <div className="mt-10 flex space-x-4">
-            <button className="bg-black hover:bg-neutral-800 text-white font-robotomono-semibold py-4 px-12 flex items-center">
-              Design
-              <HiArrowRight className="ml-2" color="#ffffff" />
-            </button>
-            <button className="border-black border-2 hover:bg-black text-black hover:text-white font-robotomono-semibold py-4 px-12 flex items-center">
-              Photography
-            </button>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="w-auto h-auto bg-yellow-400 rounded-full mx-12">
+      </div>
+      <div className="mx-auto max-w-6xl px-5 pt-10 border-t-0.75 border-black pb-10">
+        <NextImage
+          src={"/images/mindshine-cover.png"}
+          alt={"mindshine-cover"}
+          width={700}
+          height={700}
+        />
+        <h1 className="mt-7 text-5xl font-anton-regular">Mindshine</h1>
+        <h2 className="mt-4 text-xl font-lato-light">
+          Head of Product, UI / UX Designer
+        </h2>
+        <p className="text-base font-lato-light mt-4">
+          I was responsible for the redesign of the app, concepting, designing
+          and managing the development of new features, as well as doing user
+          testing and leading a team of up to 6 developers.
+        </p>
+        <div className="mt-5 flex space-x-4">
+          <button className="text-base text-white font-anton-regular px-5 py-2.5 bg-black hover:bg-neutral-800 flex justify-center items-center">
+            Read more
             <NextImage
-              src={"/images/chris-profile.png"}
+              className="ml-3.5"
+              src={"/svgs/ArrowRightWhite.svg"}
               alt={"chris-profile"}
-              width={700}
-              height={700}
+              width={15.25}
+              height={15.25}
             />
-          </div>
+          </button>
+          <button className="text-base text-black hover:text-white font-anton-regular px-5 py-2.5 border-black border-2 hover:bg-black ">
+            Get the App
+          </button>
         </div>
-      </div> */}
       </div>
     </>
   );

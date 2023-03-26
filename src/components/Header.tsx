@@ -14,7 +14,7 @@ export default function Header() {
     <Disclosure as="nav">
       {({ open }: { open: boolean }) => (
         <>
-          <div className="relative flex h-20 justify-between">
+          <div className="relative flex justify-between">
             {/* Mobile menu button */}
             <div className="absolute z-10 inset-y-5 left-5 bg-white sm:hidden">
               <Disclosure.Button className="inline-flex border-0.75 border-black items-center justify-center p-2 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -27,34 +27,16 @@ export default function Header() {
               </Disclosure.Button>
             </div>
             {/* Desktop navigation */}
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+            <div className="hidden sm:flex w-full border-b-0.75 border-black divide-x-0.75 divide-black">
+              {MENU_ITEMS.map((item) => (
                 <a
+                  key={item.href}
                   href="#"
-                  className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                  className="font-anton-regular text-base py-2.5 w-full flex justify-center"
                 >
-                  Dashboard
+                  {item.label}
                 </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                >
-                  Team
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                >
-                  Calendar
-                </a>
-              </div>
+              ))}
             </div>
           </div>
           <Disclosure.Panel>

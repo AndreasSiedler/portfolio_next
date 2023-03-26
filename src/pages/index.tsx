@@ -1,6 +1,6 @@
+import CsSlider from "@/components/CsSlider";
 import Header from "@/components/Header";
 import NextImage from "next/image";
-import HiArrowRight from "react-icons/hi";
 
 export default function Home() {
   return (
@@ -69,6 +69,35 @@ export default function Home() {
           <button className="text-base text-black hover:text-white font-anton-regular px-5 py-2.5 border-black border-2 hover:bg-black ">
             Get the App
           </button>
+        </div>
+      </div>
+      <div className="mx-auto max-w-6xl pt-10 border-t-0.75 border-black pb-10">
+        <CsSlider />
+        <div className="px-5">
+          <h1 className="mt-7 text-5xl font-anton-regular">Photography</h1>
+          <h2 className="mt-4 text-xl font-lato-light">
+            Head of Product, UI / UX Designer
+          </h2>
+          <p className="text-base font-lato-light mt-4">
+            I was responsible for the redesign of the app, concepting, designing
+            and managing the development of new features, as well as doing user
+            testing and leading a team of up to 6 developers.
+          </p>
+          <div className="mt-5 flex space-x-4">
+            <button className="text-base text-white font-anton-regular px-5 py-2.5 bg-black hover:bg-neutral-800 flex justify-center items-center">
+              Book a shooting
+              <NextImage
+                className="ml-3.5"
+                src={"/svgs/ArrowRightWhite.svg"}
+                alt={"chris-profile"}
+                width={15.25}
+                height={15.25}
+              />
+            </button>
+            <button className="text-base text-black hover:text-white font-anton-regular px-5 py-2.5 border-black border-2 hover:bg-black ">
+              Portfolio
+            </button>
+          </div>
         </div>
       </div>
     </>

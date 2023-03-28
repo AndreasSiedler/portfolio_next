@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <CsSection className=" pt-20 md:flex-row-reverse">
+      {/* First section */}
+      <CsSection className="pt-20 md:flex-row-reverse">
         <NextImage
           src={"/images/chris-profile.png"}
           alt={"chris-profile"}
@@ -44,6 +45,7 @@ export default function Home() {
           </div>
         </div>
       </CsSection>
+      {/* Mindshine section */}
       <CsSection className="border-t-0.75 border-black">
         <NextImage
           className="mr-20"
@@ -77,8 +79,9 @@ export default function Home() {
           </div>
         </div>
       </CsSection>
-      <CsSection className="border-t-0.75 border-black px-0">
-        <CsSlider />
+      {/* Photograpy section */}
+      <CsSection className="border-t-0.75 border-black px-0 md:flex-row-reverse">
+        <CsSlider className="md:w-2/3" />
         <div className="px-5">
           <h1 className="mt-7 text-5xl font-anton-regular">Photography</h1>
           <h2 className="mt-4 text-xl font-lato-light">

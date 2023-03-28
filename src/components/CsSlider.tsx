@@ -8,9 +8,14 @@ import CsButton, { CsButtonType } from "./CsButton";
 const slides = [
   { image: "/images/photography-0.png" },
   { image: "/images/photography-1.png" },
+  { image: "/images/photography-2.png" },
 ];
 
-export default function CsSlider() {
+type CsSliderProps = {
+  className?: string;
+};
+
+export default function CsSlider({ className }: CsSliderProps) {
   const ref = useRef<Slider>(null);
   const [slideNumber, setSlideNumber] = useState(1);
 
@@ -18,11 +23,12 @@ export default function CsSlider() {
     dots: false,
     infinite: false,
     speed: 500,
-    cssEase: "linear",
-    rtl: true,
-    slidesToScroll: 1,
+    // cssEase: "linear",
+    // rtl: true,
+    // slidesToScroll: 1,
+    slidesPerRow: 2,
     arrows: false,
-    initialSlide: 1,
+    initialSlide: 0,
     centerMode: true,
     centerPadding: "20px",
     beforeChange: (_, newIndex) => setSlideNumber(newIndex + 1),
@@ -40,7 +46,7 @@ export default function CsSlider() {
   };
 
   return (
-    <>
+    <div className={className}>
       <Slider {...settings} ref={ref}>
         {slides.map((slide) => (
           <div key={slide.image}>
@@ -77,6 +83,6 @@ export default function CsSlider() {
           />
         </CsButton>
       </div>
-    </>
+    </div>
   );
 }

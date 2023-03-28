@@ -20,17 +20,24 @@ export default function CsSlider({ className }: CsSliderProps) {
   const [slideNumber, setSlideNumber] = useState(1);
 
   var settings: Settings = {
-    dots: false,
     infinite: false,
+    // centerMode: true,
+    // centerPadding: "20px",
     speed: 500,
-    // cssEase: "linear",
-    // rtl: true,
-    // slidesToScroll: 1,
-    slidesPerRow: 2,
-    arrows: false,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     initialSlide: 0,
-    centerMode: true,
-    centerPadding: "20px",
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+    ],
     beforeChange: (_, newIndex) => setSlideNumber(newIndex + 1),
   };
 
@@ -50,11 +57,11 @@ export default function CsSlider({ className }: CsSliderProps) {
       <Slider {...settings} ref={ref}>
         {slides.map((slide) => (
           <div key={slide.image}>
-            <NextImage width={400} height={800} src={slide.image} alt="" />
+            <NextImage width={410} height={400} src={slide.image} alt="" />
           </div>
         ))}
       </Slider>
-      <div className="px-5 pt-5 flex justify-between">
+      <div className="pt-5 flex justify-between">
         <CsButton
           className="hover:bg-white"
           type={CsButtonType.Secondary}

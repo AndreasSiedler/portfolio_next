@@ -80,9 +80,9 @@ export default function Home() {
         </div>
       </CsSection>
       {/* Photograpy section */}
-      <CsSection className="border-t-0.75 border-black px-0 md:flex-row-reverse">
+      <CsSection className="border-t-0.75 border-black md:flex-row-reverse">
         <CsSlider className="md:w-2/3" />
-        <div className="px-5">
+        <div className="md:mr-20">
           <h1 className="mt-7 text-5xl font-anton-regular">Photography</h1>
           <h2 className="mt-4 text-xl font-lato-light">
             Head of Product, UI / UX Designer
@@ -93,7 +93,7 @@ export default function Home() {
             testing and leading a team of up to 6 developers.
           </p>
           <div className="mt-5 flex space-x-4">
-            <button className="text-base text-white font-anton-regular px-5 py-2.5 bg-black hover:bg-neutral-800 flex justify-center items-center">
+            <CsButton>
               Book a shooting
               <NextImage
                 className="ml-3.5"
@@ -102,10 +102,8 @@ export default function Home() {
                 width={15.25}
                 height={15.25}
               />
-            </button>
-            <button className="text-base text-black hover:text-white font-anton-regular px-5 py-2.5 border-black border-2 hover:bg-black ">
-              Portfolio
-            </button>
+            </CsButton>
+            <CsButton type={CsButtonType.Secondary}>Portfolio</CsButton>
           </div>
         </div>
       </CsSection>

@@ -1,4 +1,5 @@
 import CsButton, { CsButtonType } from "@/components/CsButton";
+import CsContact from "@/components/CsContact";
 import CsSection from "@/components/CsSection";
 import CsSlider from "@/components/CsSlider";
 import CsText from "@/components/CsText";
@@ -105,6 +106,14 @@ export default function Home() {
             </CsButton>
             <CsButton type={CsButtonType.Secondary}>Portfolio</CsButton>
           </div>
+        </div>
+      </CsSection>
+      <CsSection className="border-t-0.75 border-black">
+        <div className="w-full">
+          <h1 className="mt-7 text-5xl font-anton-regular">
+            Let’s get in touch 👋{" "}
+          </h1>
+          <CsContact />
         </div>
       </CsSection>
     </>

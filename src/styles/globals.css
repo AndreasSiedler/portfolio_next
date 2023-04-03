@@ -22,3 +22,7 @@
   font-family: "LatoLight";
   src: url("/fonts/Lato-Light.ttf");
 }
+@font-face {
+  font-family: "LatoBold";
+  src: url("/fonts/Lato-bold.ttf");
+}

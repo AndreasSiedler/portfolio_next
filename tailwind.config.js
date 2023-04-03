@@ -16,6 +16,7 @@ module.exports = {
         "robotomono-semibold": ["RobotoMonoSemiBold"],
         "anton-regular": ["AntonRegular"],
         "lato-light": ["LatoLight"],
+        "lato-bold": ["LatoBold"],
       },
       borderWidth: {
         0.75: "0.75px",

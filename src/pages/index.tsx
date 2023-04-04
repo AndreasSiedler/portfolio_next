@@ -1,5 +1,6 @@
 import CsButton, { CsButtonType } from "@/components/CsButton";
 import CsContact from "@/components/CsContact";
+import CsFooter from "@/components/CsFooter";
 import CsSection from "@/components/CsSection";
 import CsSlider from "@/components/CsSlider";
 import CsText from "@/components/CsText";
@@ -116,6 +117,7 @@ export default function Home() {
           <CsContact />
         </div>
       </CsSection>
+      <CsFooter />
     </>
   );
 }

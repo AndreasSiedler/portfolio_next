@@ -5,7 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import CsButton, { CsButtonType } from "./CsButton";
 
-const slides = [
+const IMAGE_HEIGHT_FACTOR = 1.5;
+const SLIDES_TO_SCROLL = 2;
+const SLIDES_TO_SHOW = 2;
+const SLIDES = [
   { image: "/images/photography-0.png" },
   { image: "/images/photography-1.png" },
   { image: "/images/photography-2.png" },
@@ -22,23 +25,37 @@ export default function CsSlider({ className }: CsSliderProps) {
   var settings: Settings = {
     infinite: false,
     // centerMode: true,
-    // centerPadding: "20px",
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    initialSlide: 0,
+    // centerPadding: "0px",
+    // speed: 500,
+    slidesToShow: SLIDES_TO_SHOW,
+    slidesToScroll: SLIDES_TO_SCROLL,
+    // initialSlide: 0,
     responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: "0px",
         },
       },
     ],
-    beforeChange: (_, newIndex) => setSlideNumber(newIndex + 1),
+    beforeChange: (_, newIndex) => {
+      return setSlideNumber(newIndex + 1);
+    },
   };
 
   const handlePreviousSlide = () => {
@@ -55,9 +72,14 @@ export default function CsSlider({ className }: CsSliderProps) {
   return (
     <div className={className}>
       <Slider {...settings} ref={ref}>
-        {slides.map((slide) => (
+        {SLIDES.map((slide) => (
           <div key={slide.image}>
-            <NextImage width={410} height={400} src={slide.image} alt="" />
+            <NextImage
+              width={420}
+              height={420 * IMAGE_HEIGHT_FACTOR}
+              src={slide.image}
+              alt=""
+            />
           </div>
         ))}
       </Slider>
@@ -75,7 +97,7 @@ export default function CsSlider({ className }: CsSliderProps) {
           />
         </CsButton>
         <div className="flex items-center text-lg font-lato-light">
-          {slideNumber} / {slides.length}
+          {slideNumber} / {Math.ceil(SLIDES.length / SLIDES_TO_SCROLL)}
         </div>
         <CsButton
           className="hover:bg-white"

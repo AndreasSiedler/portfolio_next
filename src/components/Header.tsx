@@ -27,18 +27,24 @@ export default function Header() {
               </Disclosure.Button>
             </div>
             {/* Desktop navigation */}
-            <div className="hidden sm:flex w-full border-b-0.75 border-black divide-x-0.75 divide-black">
-              {MENU_ITEMS.map((item) => (
-                <a
-                  key={item.href}
-                  href="#"
-                  className="font-anton-regular text-base py-2.5 w-full flex justify-center"
-                >
-                  {item.label}
-                </a>
-              ))}
+            <div className="flex justify-between items-center border-b-0.75 border-black w-full px-16">
+              <div className="hidden sm:block font-anton-regular text-base p-5">
+                Chris K. Seidel
+              </div>
+              <div className="hidden sm:flex">
+                {MENU_ITEMS.map((item) => (
+                  <a
+                    key={item.href}
+                    href="#"
+                    className="font-anton-regular text-base p-5 break-words whitespace-nowrap w-full flex justify-center"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
+          {/* Mobile popup menu */}
           <Disclosure.Panel>
             <div className="fixed inset-0 bg-black/75" aria-hidden="true" />
             <div className="fixed z-10 top-5 left-5 bg-white sm:hidden">

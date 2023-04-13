@@ -6,6 +6,7 @@ import CsSlider from "@/components/CsSlider";
 import CsText from "@/components/CsText";
 import Header from "@/components/Header";
 import NextImage from "next/image";
+import NextLink from "next/link";
 
 export default function Home() {
   return (
@@ -105,7 +106,9 @@ export default function Home() {
                 height={15.25}
               />
             </CsButton>
-            <CsButton type={CsButtonType.Secondary}>Portfolio</CsButton>
+            <NextLink href={"/photography"}>
+              <CsButton type={CsButtonType.Secondary}>Portfolio</CsButton>
+            </NextLink>
           </div>
         </div>
       </CsSection>

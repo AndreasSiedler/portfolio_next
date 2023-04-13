@@ -1,5 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import NextLink from "next/link";
 
 const MENU_ITEMS: { label: string; href: string }[] = [
   { label: "About Me", href: "about-me" },
@@ -28,9 +29,11 @@ export default function Header() {
             </div>
             {/* Desktop navigation */}
             <div className="flex justify-between items-center border-b-0.75 border-black w-full px-16">
-              <div className="hidden sm:block font-anton-regular text-base p-5">
-                Chris K. Seidel
-              </div>
+              <NextLink href="/">
+                <div className="hidden sm:block font-anton-regular text-base p-5">
+                  Chris K. Seidel
+                </div>
+              </NextLink>
               <div className="hidden sm:flex">
                 {MENU_ITEMS.map((item) => (
                   <a

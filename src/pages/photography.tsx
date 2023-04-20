@@ -7,22 +7,22 @@ import clsx from "clsx";
 import NextImage from "next/image";
 
 const IMAGES = [
-  { image: "/images/photography-0.png" },
   { image: "/images/photography-1.png" },
+  { image: "/images/photography-3.png" },
   { image: "/images/photography-2.png" },
-  { image: "/images/photography-0.png", className: "md:w-2/3" },
-  { image: "/images/photography-1.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-1.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-1.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-0.png", className: "md:w-2/3" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-2.png" },
+  { image: "/images/photography-4.png", className: "md:w-2/3" },
+  { image: "/images/photography-5.png" },
+  { image: "/images/photography-6.png" },
+  { image: "/images/photography-7.png" },
+  { image: "/images/photography-8.png" },
+  { image: "/images/photography-9.png" },
+  { image: "/images/photography-10.png" },
+  { image: "/images/photography-11.png" },
+  { image: "/images/photography-12.png" },
+  { image: "/images/photography-13.png", className: "md:w-2/3" },
+  { image: "/images/photography-14.png" },
+  { image: "/images/photography-15.png" },
+  { image: "/images/photography-16.png" },
 ];
 
 export default function PhotographyPage() {

@@ -5,7 +5,7 @@ import NextLink from "next/link";
 const MENU_ITEMS: { label: string; href: string }[] = [
   { label: "About Me", href: "about-me" },
   { label: "Work", href: "work" },
-  { label: "Photography", href: "photography" },
+  { label: "Photography", href: "/photography" },
   { label: "Contact", href: "contact" },
   { label: "Resume", href: "resume" },
 ];
@@ -36,13 +36,13 @@ export default function Header() {
               </NextLink>
               <div className="hidden sm:flex">
                 {MENU_ITEMS.map((item) => (
-                  <a
+                  <NextLink
                     key={item.href}
-                    href="#"
+                    href={item.href}
                     className="font-anton-regular text-base p-5 break-words whitespace-nowrap w-full flex justify-center"
                   >
                     {item.label}
-                  </a>
+                  </NextLink>
                 ))}
               </div>
             </div>

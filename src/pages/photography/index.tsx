@@ -5,27 +5,38 @@ import CsText from "@/components/CsText";
 import Header from "@/components/Header";
 import clsx from "clsx";
 import NextImage from "next/image";
+import { useRouter } from "next/router";
 
 const IMAGES = [
-  { image: "/images/photography-1.png" },
-  { image: "/images/photography-3.png" },
-  { image: "/images/photography-2.png" },
-  { image: "/images/photography-4.png", className: "md:w-2/3" },
-  { image: "/images/photography-5.png" },
-  { image: "/images/photography-6.png" },
-  { image: "/images/photography-7.png" },
-  { image: "/images/photography-8.png" },
-  { image: "/images/photography-9.png" },
-  { image: "/images/photography-10.png" },
-  { image: "/images/photography-11.png" },
-  { image: "/images/photography-12.png" },
-  { image: "/images/photography-13.png", className: "md:w-2/3" },
-  { image: "/images/photography-14.png" },
-  { image: "/images/photography-15.png" },
-  { image: "/images/photography-16.png" },
+  { image: "/images/photography-1.png", href: "/photography/project-1" },
+  { image: "/images/photography-2.png", href: "/photography/project-1" },
+  { image: "/images/photography-3.png", href: "/photography/project-1" },
+  {
+    image: "/images/photography-4.png",
+    href: "/photography/project-1",
+    className: "md:w-2/3",
+  },
+  { image: "/images/photography-5.png", href: "/photography/project-1" },
+  { image: "/images/photography-6.png", href: "/photography/project-1" },
+  { image: "/images/photography-7.png", href: "/photography/project-1" },
+  { image: "/images/photography-8.png", href: "/photography/project-1" },
+  { image: "/images/photography-9.png", href: "/photography/project-1" },
+  { image: "/images/photography-10.png", href: "/photography/project-1" },
+  { image: "/images/photography-11.png", href: "/photography/project-1" },
+  { image: "/images/photography-12.png", href: "/photography/project-1" },
+  {
+    image: "/images/photography-13.png",
+    href: "/photography/project-1",
+    className: "md:w-2/3",
+  },
+  { image: "/images/photography-14.png", href: "/photography/project-1" },
+  { image: "/images/photography-15.png", href: "/photography/project-1" },
+  { image: "/images/photography-16.png", href: "/photography/project-1" },
 ];
 
 export default function PhotographyPage() {
+  const router = useRouter();
+
   return (
     <>
       <Header />
@@ -60,13 +71,14 @@ export default function PhotographyPage() {
             {IMAGES.map((image) => (
               <NextImage
                 className={clsx(
-                  "w-full md:w-1/3 pr-3 pl-3 h-144 object-cover",
+                  "w-full md:w-1/3 pr-3 pl-3 h-144 object-cover cursor-pointer",
                   image.className
                 )}
                 key={image.image}
                 width={420}
                 height={420}
                 src={image.image}
+                onClick={() => router.push(image.href)}
                 alt=""
               />
             ))}

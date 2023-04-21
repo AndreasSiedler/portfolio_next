@@ -8,6 +8,13 @@ import Header from "@/components/Header";
 import NextImage from "next/image";
 import NextLink from "next/link";
 
+const IMAGE_HEIGHT_FACTOR = 1.5;
+const SLIDES = [
+  { image: "/images/photography-0.png" },
+  { image: "/images/photography-1.png" },
+  { image: "/images/photography-2.png" },
+];
+
 export default function Home() {
   return (
     <>
@@ -84,7 +91,18 @@ export default function Home() {
       </CsSection>
       {/* Photograpy section */}
       <CsSection className="border-t-0.75 border-black md:flex-row-reverse">
-        <CsSlider className="md:w-2/3" />
+        <CsSlider className="md:w-2/3" slidesCount={SLIDES.length}>
+          {SLIDES.map((slide) => (
+            <div key={slide.image}>
+              <NextImage
+                width={420}
+                height={420 * IMAGE_HEIGHT_FACTOR}
+                src={slide.image}
+                alt=""
+              />
+            </div>
+          ))}
+        </CsSlider>
         <div className="md:mr-20">
           <h1 className="mt-7 text-5xl font-anton-regular">Photography</h1>
           <h2 className="mt-4 text-xl font-lato-light">
@@ -112,6 +130,7 @@ export default function Home() {
           </div>
         </div>
       </CsSection>
+
       <CsSection className="border-t-0.75 border-black">
         <div className="w-full">
           <h1 className="mt-7 text-5xl font-anton-regular">

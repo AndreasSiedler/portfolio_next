@@ -1,4 +1,4 @@
-import CsButton, { CsButtonType } from "@/components/CsButton";
+import CsButton from "@/components/CsButton";
 import CsFooter from "@/components/CsFooter";
 import CsSection from "@/components/CsSection";
 import CsSlider from "@/components/CsSlider";
@@ -6,11 +6,16 @@ import CsText from "@/components/CsText";
 import Header from "@/components/Header";
 import clsx from "clsx";
 import NextImage from "next/image";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 const IMAGE_HEIGHT_FACTOR = 1.5;
 const SLIDES = [
+  { image: "/images/photography-0.png" },
+  { image: "/images/photography-1.png" },
+  { image: "/images/photography-2.png" },
+  { image: "/images/photography-0.png" },
+  { image: "/images/photography-1.png" },
+  { image: "/images/photography-2.png" },
   { image: "/images/photography-0.png" },
   { image: "/images/photography-1.png" },
   { image: "/images/photography-2.png" },
@@ -24,14 +29,16 @@ export default function PhotographyProjectPage() {
       <Header />
       {/* First section */}
       <CsSection className="pt-20 md:items-stretch">
-        <NextImage
-          className={clsx("w-full pr-20 pl-3 object-cover cursor-pointer")}
-          width={576}
-          height={864}
-          src={activeImage}
-          alt=""
-        />
-        <div className="w-full flex-col justify-between inline-flex">
+        <div className="w-1/2">
+          <NextImage
+            className={clsx("pr-20 pl-3 object-cover cursor-pointer")}
+            width={700}
+            height={864}
+            src={activeImage}
+            alt=""
+          />
+        </div>
+        <div className="w-1/2 flex-col justify-between inline-flex basis-0">
           <div className="md:mr-20">
             <h1 className="mt-7 text-5xl font-anton-regular">Project name</h1>
             <h2 className="mt-4 text-xl font-lato-light">
@@ -55,7 +62,13 @@ export default function PhotographyProjectPage() {
               </CsButton>
             </div>
           </div>
-          <CsSlider slidesCount={SLIDES.length} className="w-2/3">
+          {/* <CsSwiper /> */}
+          <CsSlider
+            slidesToShow={4}
+            slidesToScroll={4}
+            slidesCount={SLIDES.length}
+            className="w-full"
+          >
             {SLIDES.map((slide) => (
               <div
                 key={slide.image}
@@ -63,7 +76,7 @@ export default function PhotographyProjectPage() {
                 onClick={() => setActiveImage(slide.image)}
               >
                 <NextImage
-                  width={134.5}
+                  width={150}
                   height={201 * IMAGE_HEIGHT_FACTOR}
                   src={slide.image}
                   alt=""

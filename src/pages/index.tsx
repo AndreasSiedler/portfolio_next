@@ -91,7 +91,12 @@ export default function Home() {
       </CsSection>
       {/* Photograpy section */}
       <CsSection className="border-t-0.75 border-black md:flex-row-reverse">
-        <CsSlider className="md:w-2/3" slidesCount={SLIDES.length}>
+        <CsSlider
+          slidesToScroll={2}
+          slidesToShow={2}
+          className="md:w-2/3"
+          slidesCount={SLIDES.length}
+        >
           {SLIDES.map((slide) => (
             <div key={slide.image}>
               <NextImage

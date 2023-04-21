@@ -5,16 +5,17 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import CsButton, { CsButtonType } from "./CsButton";
 
-const SLIDES_TO_SCROLL = 2;
-const SLIDES_TO_SHOW = 2;
-
 type CsSliderProps = {
+  slidesToShow: number;
+  slidesToScroll: number;
   slidesCount: number;
   className?: string;
   children: ReactNode;
 };
 
 export default function CsSlider({
+  slidesToShow,
+  slidesToScroll,
   slidesCount,
   className,
   children,
@@ -27,9 +28,10 @@ export default function CsSlider({
     // centerMode: true,
     // centerPadding: "0px",
     // speed: 500,
-    slidesToShow: SLIDES_TO_SHOW,
-    slidesToScroll: SLIDES_TO_SCROLL,
+    slidesToShow: slidesToShow,
+    slidesToScroll: slidesToScroll,
     // initialSlide: 0,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -88,7 +90,7 @@ export default function CsSlider({
           />
         </CsButton>
         <div className="flex items-center text-lg font-lato-light">
-          {slideNumber} / {Math.ceil(slidesCount / SLIDES_TO_SCROLL)}
+          {slideNumber} / {Math.ceil(slidesCount / slidesToScroll)}
         </div>
         <CsButton
           className="hover:bg-white"

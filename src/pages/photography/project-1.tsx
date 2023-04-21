@@ -31,8 +31,8 @@ export default function PhotographyProjectPage() {
           src={activeImage}
           alt=""
         />
-        <div className="flex-cols justify-between">
-          <div className="md:mr-20 self-end">
+        <div className="w-full flex-col justify-between inline-flex">
+          <div className="md:mr-20">
             <h1 className="mt-7 text-5xl font-anton-regular">Project name</h1>
             <h2 className="mt-4 text-xl font-lato-light">
               Head of Product, UI / UX Designer
@@ -55,7 +55,7 @@ export default function PhotographyProjectPage() {
               </CsButton>
             </div>
           </div>
-          <CsSlider className="md:w-2/3" slidesCount={SLIDES.length}>
+          <CsSlider slidesCount={SLIDES.length} className="w-2/3">
             {SLIDES.map((slide) => (
               <div
                 key={slide.image}
@@ -70,7 +70,7 @@ export default function PhotographyProjectPage() {
                 />
               </div>
             ))}
-          </CsSlider>{" "}
+          </CsSlider>
         </div>
       </CsSection>
       {/* Mindshine section */}
